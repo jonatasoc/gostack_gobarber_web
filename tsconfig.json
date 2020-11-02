@@ -20,6 +20,6 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "src", "tsconfig.json", "prettier.config.js"
   ]
 }
