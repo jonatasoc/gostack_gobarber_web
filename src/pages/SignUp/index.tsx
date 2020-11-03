@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FiArrowLeft, FiMail, FiUser, FiLock
+  FiArrowLeft, FiMail, FiUser, FiLock,
 } from 'react-icons/fi';
 import { Form } from '@unform/web';
 
