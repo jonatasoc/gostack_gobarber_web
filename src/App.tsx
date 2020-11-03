@@ -4,7 +4,6 @@ import React from 'react';
 import SignUp from './pages/SignUp';
 import GlobalStyle from '../src/styles/global';
 
-
 function App() {
   return (
     <>
