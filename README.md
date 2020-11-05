@@ -1,6 +1,10 @@
 # Go Barber
 
-<p align="left">
+<p align="center">
+   <img src="docs/SignIn.gif" width="auto"/>
+</p>
+
+<p align="center">
    <img src="docs/gobarber-initial-screen.png" width="auto"/>
 </p>
 
