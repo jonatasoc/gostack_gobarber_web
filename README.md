@@ -25,6 +25,7 @@
 * #### Listing notifications and marking them as read
 * #### Updating user profile
 
+
 # :construction_worker: Installation
 
 **You need to install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/) first, then in order to clone the project via HTTPS, run this command:**
@@ -34,6 +35,7 @@
 SSH URLs provide access to a Git repository via SSH, a secure protocol. If you have a SSH key registered in your Github account, clone the project using this command:
 
 ```git@github.com:jonatasoc/gostack_gobarber_web.git```
+
 **Install dependencies**
 
 ```yarn```
