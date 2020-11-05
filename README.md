@@ -15,7 +15,6 @@
 * [License](#closed_book-license)
 
 <br />
-<p align="center"><img src="docs/signin.gif?raw=true"/></p>
 
 # :rocket: Features
 
@@ -35,7 +34,18 @@
 SSH URLs provide access to a Git repository via SSH, a secure protocol. If you have a SSH key registered in your Github account, clone the project using this command:
 
 ```git@github.com:jonatasoc/gostack_gobarber_web.git```
+**Install dependencies**
 
+```yarn```
+
+Create your enviroment variables based on the examples of ```.env.example```
+
+
+# :runner: Getting Started
+
+Run the following command in order to start the application in a development environment:
+
+```yarn start```
 
 # :postbox: Faq
 
