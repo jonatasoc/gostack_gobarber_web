@@ -1,7 +1,7 @@
 # Go Barber
 
 <p align="left">
-   <img src="docs/gobarber-initial-screen.png" width="200"/>
+   <img src="docs/gobarber-initial-screen.png" width="auto"/>
 </p>
 
 ---
