@@ -1,5 +1,5 @@
-import React, { useRef, useCallback } from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi'
+import React, { useRef, useCallback, useContext } from 'react';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -8,29 +8,38 @@ import getValidationErrors from '../../utils/getValidationErros';
 import { Container, Content, Background } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-
 import logoImg from '../../assets/logo.svg';
+
+import { AuthContext } from '../../context/AuthContext';
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data: object) => {
-    const schema = Yup.object().shape({
-      email: Yup.string().required('E-mail obrigatório').email('Digite um e-mail válido'),
-      password: Yup.string().required('Senha obrigatória'),
-    });
+  const { signIn } = useContext(AuthContext);
 
-    try {
-      formRef.current?.setErrors({});
-      await schema.validate(data, {
-        abortEarly: false,
+  const handleSubmit = useCallback(
+    async (data: object) => {
+      const schema = Yup.object().shape({
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um e-mail válido'),
+        password: Yup.string().required('Senha obrigatória'),
       });
-    } catch (err) {
-      const errors = getValidationErrors(err);
 
-      formRef.current?.setErrors(errors);
-    }
-  }, [])
+      try {
+        formRef.current?.setErrors({});
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+        signIn();
+      } catch (err) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+      }
+    },
+    [signIn],
+  );
 
   return (
     <Container>
@@ -41,7 +50,12 @@ const SignIn: React.FC = () => {
           <h1>Faça o seu logon</h1>
 
           <Input name="email" type="text" icon={FiMail} placeholder="E-mail" />
-          <Input name="password" type="password" icon={FiLock} placeholder="Senha" />
+          <Input
+            name="password"
+            type="password"
+            icon={FiLock}
+            placeholder="Senha"
+          />
 
           <Button type="submit">Entrar</Button>
 
@@ -55,6 +69,6 @@ const SignIn: React.FC = () => {
       <Background />
     </Container>
   );
-}
+};
 
 export default SignIn;
