@@ -12,13 +12,18 @@ import logoImg from '../../assets/logo.svg';
 
 import { AuthContext } from '../../context/AuthContext';
 
+interface SignInCredentials {
+  email: string;
+  password: string;
+}
+
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useContext(AuthContext);
 
   const handleSubmit = useCallback(
-    async (data: object) => {
+    async (data: SignInCredentials) => {
       const schema = Yup.object().shape({
         email: Yup.string()
           .required('E-mail obrigatório')
@@ -31,7 +36,11 @@ const SignIn: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
-        signIn();
+        console.log(data.email, data.password);
+        signIn({
+          email: data.email,
+          password: data.password,
+        });
       } catch (err) {
         const errors = getValidationErrors(err);
 
