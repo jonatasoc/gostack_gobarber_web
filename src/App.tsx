@@ -3,7 +3,8 @@ import React from 'react';
 import SignIn from './pages/SignIn';
 // import SignUp from './pages/SignUp';
 import GlobalStyle from '../src/styles/global';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './hooks/AuthContext';
+import ToastContainer from './components/ToastContainer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <AuthProvider>
         <SignIn />
       </AuthProvider>
+      <ToastContainer />
       <GlobalStyle />
     </>
   );
