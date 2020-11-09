@@ -20,7 +20,9 @@ interface SignInCredentials {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const { signIn } = useContext(AuthContext);
+  const { user, signIn } = useContext(AuthContext);
+
+  console.log(user);
 
   const handleSubmit = useCallback(
     async (data: SignInCredentials) => {
@@ -36,7 +38,6 @@ const SignIn: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         });
-        console.log(data.email, data.password);
         signIn({
           email: data.email,
           password: data.password,
