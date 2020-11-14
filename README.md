@@ -62,4 +62,4 @@ Run the following command in order to start the application in a development env
 # :closed_book: License
 
 Released in 2020 (Work in progress)
-This project is under the [MIT license](https://github.com/LauraBeatris/gobarber-web/master/LICENSE).
+This project is under the MIT license
