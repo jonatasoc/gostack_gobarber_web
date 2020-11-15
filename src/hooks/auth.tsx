@@ -45,7 +45,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
       setData({ token, user });
     } catch (err) {
-      console.log(err);
+      throw new Error(err);
     }
   }, []);
 
