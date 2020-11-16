@@ -6,7 +6,7 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
 import getValidationErrors from '../../utils/getValidationErros';
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AnimatedContainer } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import logoImg from '../../assets/logo.svg';
@@ -64,27 +64,34 @@ const SignIn: React.FC = () => {
   return (
     <Container>
       <Content>
-        <img src={logoImg} alt="GoBarber" />
+        <AnimatedContainer>
+          <img src={logoImg} alt="GoBarber" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça o seu logon</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça o seu logon</h1>
 
-          <Input name="email" type="text" icon={FiMail} placeholder="E-mail" />
-          <Input
-            name="password"
-            type="password"
-            icon={FiLock}
-            placeholder="Senha"
-          />
+            <Input
+              name="email"
+              type="text"
+              icon={FiMail}
+              placeholder="E-mail"
+            />
+            <Input
+              name="password"
+              type="password"
+              icon={FiLock}
+              placeholder="Senha"
+            />
 
-          <Button type="submit">Entrar</Button>
+            <Button type="submit">Entrar</Button>
 
-          <a href="forgot">Esqueci minha senha</a>
-        </Form>
-        <Link to="/signup">
-          <FiLogIn />
-          Criar Conta
-        </Link>
+            <a href="forgot">Esqueci minha senha</a>
+          </Form>
+          <Link to="/signup">
+            <FiLogIn />
+            Criar Conta
+          </Link>
+        </AnimatedContainer>
       </Content>
       <Background />
     </Container>
