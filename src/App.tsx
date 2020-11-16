@@ -7,12 +7,12 @@ import Routes from './routes';
 
 function App() {
   return (
-    <Router>
-      <AppProvider>
+    <AppProvider>
+      <Router>
         <Routes />
-      </AppProvider>
-      <GlobalStyle />
-    </Router>
+        <GlobalStyle />
+      </Router>
+    </AppProvider>
   );
 }
 

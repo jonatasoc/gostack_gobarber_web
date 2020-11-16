@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from 'react';
-import {
-  FiArrowLeft, FiMail, FiUser, FiLock,
-} from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiArrowLeft, FiMail, FiUser, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -19,7 +18,9 @@ const SignUp: React.FC = () => {
   const handleSubmit = useCallback(async (data: object) => {
     const schema = Yup.object().shape({
       name: Yup.string().required('Nome obrigatório'),
-      email: Yup.string().required('E-mail obrigatório').email('Digite um e-mail válido'),
+      email: Yup.string()
+        .required('E-mail obrigatório')
+        .email('Digite um e-mail válido'),
       password: Yup.string().min(6, 'No mínimo 6 dígitos'),
     });
 
@@ -33,7 +34,7 @@ const SignUp: React.FC = () => {
 
       formRef.current?.setErrors(errors);
     }
-  }, [])
+  }, []);
 
   return (
     <Container>
@@ -46,15 +47,19 @@ const SignUp: React.FC = () => {
 
           <Input name="name" type="text" icon={FiUser} placeholder="Nome" />
           <Input name="email" type="text" icon={FiMail} placeholder="E-mail" />
-          <Input name="password" type="password" icon={FiLock} placeholder="Senha" />
+          <Input
+            name="password"
+            type="password"
+            icon={FiLock}
+            placeholder="Senha"
+          />
 
           <Button type="submit">Cadastrar</Button>
-
         </Form>
-        <a href="create">
+        <Link to="/">
           <FiArrowLeft />
           Voltar para logon
-        </a>
+        </Link>
       </Content>
     </Container>
   );
