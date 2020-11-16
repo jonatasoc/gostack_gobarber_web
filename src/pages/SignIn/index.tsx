@@ -1,4 +1,5 @@
 import React, { useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -52,7 +53,8 @@ const SignIn: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na autenticação',
-          description: 'Ocorreu ao fazer login, verfiqiue as credenciais.',
+          description:
+            'Ocorreu um erro ao fazer login, verfiqiue as credenciais.',
         });
       }
     },
@@ -79,10 +81,10 @@ const SignIn: React.FC = () => {
 
           <a href="forgot">Esqueci minha senha</a>
         </Form>
-        <a href="create">
+        <Link to="/singup">
           <FiLogIn />
           Criar Conta
-        </a>
+        </Link>
       </Content>
       <Background />
     </Container>
