@@ -1,4 +1,4 @@
-# Go Barber
+<h1 align="center">GoBarber Web 👋</h1>
 
 <p align="center">
    <img src="docs/SignIn.gif" width="auto"/>
