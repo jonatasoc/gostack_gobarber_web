@@ -1,4 +1,8 @@
-# Go Barber
+<h1 align="center">GoBarber Web 👋</h1>
+<p align="center">
+   (Work in progress)
+</p>
+
 
 <p align="center">
    <img src="docs/SignIn.gif" width="auto"/>
@@ -61,5 +65,5 @@ Run the following command in order to start the application in a development env
 
 # :closed_book: License
 
-Released in 2020 (Work in progress)
+Released in 2020 
 This project is under the MIT license
