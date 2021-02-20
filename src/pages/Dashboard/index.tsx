@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import DayPricker, { DayModifiers } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+
 import {
   Container,
   Header,
@@ -18,6 +21,13 @@ import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const handleDateChange = useCallback((day: Date, modifiers: DayModifiers) => {
+    if (modifiers.available) {
+      setSelectedDate(day);
+    }
+  }, []);
+
   const { signOut, user } = useAuth();
 
   return (
@@ -111,7 +121,34 @@ const Dashboard: React.FC = () => {
             </Appointment>
           </Section>
         </Schedule>
-        <Calendar />
+        <Calendar>
+          <DayPricker
+            fromMonth={new Date()}
+            disabledDays={[{ daysOfWeek: [0, 6] }]}
+            weekdaysShort={['D', 'S', 'T', 'Q', 'Q', 'S', 'S']}
+            modifiers={{
+              available: {
+                daysOfWeek: [1, 2, 3, 4, 5],
+              },
+            }}
+            months={[
+              'Janeiro',
+              'Fevereiro',
+              'Março',
+              'Abril',
+              'Maio',
+              'Junho',
+              'Julho',
+              'Agosto',
+              'Setembro',
+              'Outubro',
+              'Novembro',
+              'Dezembro,',
+            ]}
+            onDayClick={handleDateChange}
+            selectedDays={selectedDate}
+          />
+        </Calendar>
       </Content>
     </Container>
   );
