@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import DayPricker, { DayModifiers } from 'react-day-picker';
+import { isWeekend } from 'date-fns';
 import 'react-day-picker/lib/style.css';
 
 import {
@@ -20,7 +21,13 @@ import { FiPower, FiClock } from 'react-icons/fi';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(() => {
+    if (isWeekend(new Date())) {
+      return undefined;
+    } else {
+      return new Date();
+    }
+  });
 
   const handleDateChange = useCallback((day: Date, modifiers: DayModifiers) => {
     if (modifiers.available) {
