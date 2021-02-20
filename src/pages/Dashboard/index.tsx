@@ -8,6 +8,8 @@ import {
   Schedule,
   Calendar,
   NextAppointment,
+  Section,
+  Appointment,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
@@ -57,6 +59,56 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/16616459?s=460&u=30d354e539a4bd253a48409b63638f83d6f2f4f4&v=4"
+                  alt="Jonatas de Oliveira Coelho"
+                />
+                <strong>Jonatas de Oliveira Coelho</strong>
+              </div>
+            </Appointment>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/16616459?s=460&u=30d354e539a4bd253a48409b63638f83d6f2f4f4&v=4"
+                  alt="Jonatas de Oliveira Coelho"
+                />
+                <strong>Jonatas de Oliveira Coelho</strong>
+              </div>
+            </Appointment>
+          </Section>
+          <Section>
+            <strong>Tarde</strong>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/16616459?s=460&u=30d354e539a4bd253a48409b63638f83d6f2f4f4&v=4"
+                  alt="Jonatas de Oliveira Coelho"
+                />
+                <strong>Jonatas de Oliveira Coelho</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
