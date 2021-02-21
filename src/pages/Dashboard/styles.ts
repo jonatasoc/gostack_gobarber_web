@@ -1,5 +1,18 @@
 import { shade } from 'polished';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+0% {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+`;
 
 export const Container = styled.div``;
 
@@ -72,6 +85,8 @@ export const Schedule = styled.div`
     display: flex;
     align-items: center;
     font-weight: 500;
+
+    animation: ${appearFromLeft} 1s;
 
     span {
       display: flex;
