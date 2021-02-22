@@ -45,10 +45,21 @@ export const Profile = styled.div`
     flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
+
+    span {
+      color: #f4ede9;
+    }
   }
 
-  strong {
+  a {
+    text-decoration: none;
     color: #ff9000;
+
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
 

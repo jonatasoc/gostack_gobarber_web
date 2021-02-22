@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import DayPricker, { DayModifiers } from 'react-day-picker';
 import { isToday, isWeekend, format, parseISO, isAfter } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
@@ -155,7 +156,9 @@ const Dashboard: React.FC = () => {
             <img src={user.avatar_url} alt="Jonatas de Oliveira" />
             <div>
               <span>Bem-vindo,</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
           <button type="button" onClick={signOut}>
