@@ -141,7 +141,7 @@ const Dashboard: React.FC = () => {
 
   const nextAppointment = useMemo(() => {
     return appointments.find(appointment => {
-      isAfter(parseISO(appointment.date), new Date());
+      return isAfter(parseISO(appointment.date), new Date());
     });
   }, [appointments]);
 
@@ -169,7 +169,7 @@ const Dashboard: React.FC = () => {
           <p>
             {selectedDate ? (
               <>
-                {selectedDate && isToday(selectedDate) && <span>'Hoje'</span>}
+                {selectedDate && isToday(selectedDate) && <span>Hoje</span>}
                 <span>{selectedDateAsText}</span>
                 <span>{selectedWeekDay}</span>
               </>
