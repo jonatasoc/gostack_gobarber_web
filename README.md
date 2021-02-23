@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-   <img src="docs/overview2.gif" width="auto"/>
+   <img src="docs/overview.gif" width="auto"/>
    <strong>App overview</strong>
 </p>
 
