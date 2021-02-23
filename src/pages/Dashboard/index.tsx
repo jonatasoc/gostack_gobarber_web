@@ -150,7 +150,9 @@ const Dashboard: React.FC = () => {
     <Container>
       <Header>
         <HeaderContent>
-          <img src={logoImg} alt="GoBarber" />
+          <Link to="/">
+            <img src={logoImg} alt="GoBarber" />
+          </Link>
 
           <Profile>
             <img src={user.avatar_url} alt="Jonatas de Oliveira" />
