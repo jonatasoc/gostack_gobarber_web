@@ -10,17 +10,22 @@
 
 <p align="center">
    <img src="docs/SignUp.png" width="auto"/>
-   Sign Up
+   <strong>Sign Up</strong>
+</p>
+
+<p align="center">
+   <img src="docs/ForgotPassword.png" width="auto"/>
+   <strong>Forgot Password</strong>
 </p>
 
 <p align="center">
    <img src="docs/dashboard.png" width="auto"/>
-   DashBoard Page
+   <strong>Dashboard Page</strong>
 </p>
 
 <p align="center">
    <img src="docs/ProfilePage.png" width="auto"/>
-   Profile Page
+   <strong>Profile Page</strong>
 </p>
 
 ---
