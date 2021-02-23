@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft, FiMail, FiUser, FiLock } from 'react-icons/fi';
+import { FiMail, FiUser, FiLock, FiCamera, FiArrowLeft } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -10,9 +10,10 @@ import api from '../../services/api';
 
 import { useToast } from '../../hooks/toast';
 
-import { Container, Content } from './styles';
+import { Container, Content, AvatarInput } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { useAuth } from '../../hooks/auth';
 
 interface Profile {
   name: string;
@@ -24,6 +25,8 @@ const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
+
+  const { user } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: Profile) => {
@@ -71,25 +74,56 @@ const Profile: React.FC = () => {
 
   return (
     <Container>
+      <header>
+        <div>
+          <Link to="/dashboard">
+            <FiArrowLeft />
+          </Link>
+        </div>
+      </header>
       <Content>
-        <Form ref={formRef} onSubmit={handleSubmit}>
+        <Form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          initialData={{
+            name: user.name,
+            email: user.email,
+          }}
+        >
+          <AvatarInput>
+            <img src={user.avatar_url} alt={user.name} />
+            <button type="button">
+              <FiCamera />
+            </button>
+          </AvatarInput>
+
           <h1>Meu perfil</h1>
 
           <Input name="name" type="text" icon={FiUser} placeholder="Nome" />
           <Input name="email" type="text" icon={FiMail} placeholder="E-mail" />
+
+          <Input
+            containerStyle={{ marginTop: '24px' }}
+            name="old_password"
+            type="password"
+            icon={FiLock}
+            placeholder="Senha Atual"
+          />
           <Input
             name="password"
             type="password"
             icon={FiLock}
-            placeholder="Senha"
+            placeholder="Nova Senha"
+          />
+          <Input
+            name="password_confirmation"
+            type="password"
+            icon={FiLock}
+            placeholder="Confirmar Senha"
           />
 
-          <Button type="submit">Cadastrar</Button>
+          <Button type="submit">Confirmar mudanças</Button>
         </Form>
-        <Link to="/">
-          <FiArrowLeft />
-          Voltar para logon
-        </Link>
       </Content>
     </Container>
   );
