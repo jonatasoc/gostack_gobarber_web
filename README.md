@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-   <img src="docs/SignIn.gif" width="auto"/>
-   <strong>Sign In</strong>
+   <img src="docs/overview2.gif" width="auto"/>
+   <strong>App overview</strong>
 </p>
 
 <p align="center">
