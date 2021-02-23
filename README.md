@@ -5,14 +5,22 @@
 
 <p align="center">
    <img src="docs/SignIn.gif" width="auto"/>
+   Sign In
 </p>
 
 <p align="center">
-   <img src="docs/gobarber-initial-screen.png" width="auto"/>
+   <img src="docs/SignUp.png" width="auto"/>
+   Sign Up
 </p>
 
 <p align="center">
    <img src="docs/dashboard.png" width="auto"/>
+   DashBoard Page
+</p>
+
+<p align="center">
+   <img src="docs/ProfilePage.png" width="auto"/>
+   Profile Page
 </p>
 
 ---
