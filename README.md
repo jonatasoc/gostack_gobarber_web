@@ -5,7 +5,7 @@
 
 <p align="center">
    <img src="docs/SignIn.gif" width="auto"/>
-   <span style="font-size: 10px;"><strong>Sign In</strong></span>
+   <strong>Sign In</strong>
 </p>
 
 <p align="center">
